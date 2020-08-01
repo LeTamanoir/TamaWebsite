@@ -34,9 +34,12 @@
 }
 .acceuil__main-2__image {
 	width: 50%;
-	height: 50%;
 	transform: scaleX(-1) translateX(50vw);
 	transition: all .5s linear;
+}
+.acceuil__main-2__image:hover {
+	animation: hue-rotate 1s linear infinite;
+	animation-fill-mode: unset;
 }
 .acceuil__main-2__image.transition { 
 	transform: scaleX(-1) translateX(0);
@@ -125,9 +128,9 @@
 	height: 80px;
 	z-index: -1;
 	background-color: white;
-	opacity: .75;
+	opacity: 0.5;
 	filter: blur(2px);
-	border-radius: 2vh;
+	border-radius: 1vh;
 	position: absolute;
 }
 
@@ -245,7 +248,18 @@
 	background-position: 60vw;
 	transform: scaleX(-1);
 }
-
+#navbar:hover::before {
+	animation: hue-rotate 1s linear infinite;
+	animation-fill-mode: unset;
+}
+@keyframes hue-rotate {
+	from {
+	  filter: hue-rotate() saturate(8);
+	}
+	to {
+	  filter: hue-rotate(360deg) saturate(8);
+	}
+  }
 #navbar.transition {
 	transform: translateX(0vw);
 }
@@ -315,12 +329,16 @@
 	transform: scaleX(-1);
 
 }
+.about__main__image:hover {
+	animation: hue-rotate 1s linear infinite;
+	animation-fill-mode: unset;
+}
 .about__main__text::after {
 	display: block;
 	position: absolute;
 	content: "";
-	width: 50vw;
-	height: 20vh;
+	width: 46vw;
+	height: 12vh;
 	top: 0;
 	margin-top: -2vw;
 	margin-left: -2vw;
@@ -355,7 +373,7 @@
 	display: block;
 	position: absolute;
 	content: "";
-	width: 50vw;
+	width: 35vw;
 	height: 20vh;
 	top: 0;
 	margin-top: -2vw;
@@ -370,9 +388,17 @@
 .contact__main__image-2 {
 	width: 8vh;
 	margin-bottom: -2vh;
+	transition: all .25s ease;
 
 }
-
+.contact__main__image-2:hover {
+	transform: scale(1.5);
+	margin-left: 1vw;
+}
+.contact__main__image:hover {
+	animation: hue-rotate 1s linear infinite;
+	animation-fill-mode: unset;
+}
 .contact__main__image {
 	display: block;
 	position: absolute;
