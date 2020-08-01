@@ -1,10 +1,10 @@
 function defineAcceuil() {
 window.onscroll = function(e) {
 if (this.oldScroll > this.scrollY == false) {
-	backgroundTransition(false);
+	backgroundTransition(true);
 }
 else if (this.oldScroll < this.scrollY == false){
-	backgroundTransition(true);
+	backgroundTransition(false);
 }
  	this.oldScroll = this.scrollY;
 }

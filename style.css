@@ -5,6 +5,15 @@
 	outline: none;
 }
 
+@font-face {
+  font-family: Ubuntu-Regular;
+  src: url('fonts/Ubuntu-Regular.ttf');
+}
+@font-face {
+  font-family: Ubuntu-Bold;
+  src: url('fonts/Ubuntu-Bold.ttf');
+}
+
 #acceuil::before {
 	content: "";
 	z-index: -1;
@@ -25,7 +34,7 @@
 }
 .acceuil__main-2__image {
 	width: 50%;
-	heigt: 50%;
+	height: 50%;
 	transform: scaleX(-1) translateX(50vw);
 	transition: all .5s linear;
 }
@@ -65,36 +74,24 @@
 	opacity: 0;
 }
 .acceuil__main-1__text {
-	font-family: Arial;
+	font-family: Ubuntu-Bold;
 	font-size: 9vh;
-	font-weight: 1000;
 	text-align: center;
-	background-size: cover;
-	background-image: url("img/tamanoir.jpeg");
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
-	-webkit-text-stroke: .5px white;
+
 }
 .acceuil__main-2__text {
-	font-family: Arial;
+	font-family: Ubuntu-Bold;
 	font-size: 8vh;
 	color: black;
-	font-weight: 1000;
 	text-align: center;
 	padding: 2vh;
 	margin: 2vh;
-	background-size: cover;
-	background-image: url("img/tamanoir.jpeg");
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
-	-webkit-text-stroke: .5px white;
+	
 }
 .acceuil__main-2__text a {
-	font-family: Arial;
-	color: transparent;
-	text-decoration-color: #4d3319;
+	font-family: Ubuntu-Bold;
+	color: black;
+
 
 }
 
@@ -116,7 +113,7 @@
 
 #hamburger__container {
 	display: block;
-	margin: 12.5px;
+	margin: 17.5px;
 
 }
 #hamburger__container::before {
@@ -140,6 +137,7 @@
 	height: 60px;
 	width: 60px;
 	opacity: 0;
+	cursor: pointer;
 	
 }
 #hamburger {
@@ -210,7 +208,7 @@
 .footer__site-map {
 	margin-top: .5vh;
 	display: block;
-	font-family: Arial;
+	font-family: Ubuntu-Regular;
 	font-size: 2vh;
 }
 .footer__site-map a {
@@ -219,7 +217,7 @@
 }
 .footer__credit {
 	display: block;
-	font-family: Arial;
+	font-family: Ubuntu-Regular;
 	font-size: 2vh;
 }
 
@@ -244,7 +242,7 @@
 	background-image: url("img/tamanoir.png");
 	background-size: contain;
 	background-repeat: no-repeat;
-	background-position: right;
+	background-position: 60vw;
 	transform: scaleX(-1);
 }
 
@@ -267,7 +265,7 @@
 	margin: 1vw;
 	margin-left: 20vw;
 	border-radius: 1vw;
-	font-family: Arial;
+	font-family: Ubuntu-Regular;
 	color: black;
 	font-size: 3vh;
 	transform: translateX(-60vw);
@@ -284,7 +282,7 @@
 }
 
 #navbar.transition .navbar__link {
-	transform: translateX(0);
+	transform: translateX(-5vw);
 }
 .navbar__link:hover {
 	margin-left: 25vw;
@@ -299,7 +297,7 @@
 	transition: all .5s ease;
 }
 .about__main__text {
-	font-family: Arial;
+	font-family: Ubuntu-Regular;
 	font-size: 3.5vh;
 	margin-left: 45vw;
 	
@@ -308,13 +306,12 @@
 	display: block;
 	position: absolute;
 	content: "";
-	width: 50vw;
+	width: 30vw;
 	height: 40vh;
-	background-image: url("img/tamanoir.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	top: -15vh;
-	left: -10vw;
+	left: 10vw;
 	transform: scaleX(-1);
 
 }
@@ -336,7 +333,7 @@
 }
 
 
-#about__main,#contact__main.transition {
+#about__main.transition,#contact__main.transition {
 	transform: translateX(-100vw);
 
 }
@@ -350,7 +347,7 @@
 
 }
 .contact__main__text {
-	font-family: Arial;
+	font-family: Ubuntu-Regular;
 	font-size: 3.5vh;
 	margin-left: 45vw;
 }
@@ -380,13 +377,12 @@
 	display: block;
 	position: absolute;
 	content: "";
-	width: 50vw;
+	width: 30vw;
 	height: 40vh;
-	background-image: url("img/tamanoir.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	top: -15vh;
-	left: -10vw;
+	left: 10vw;
 	transform: scaleX(-1);
 
 }
