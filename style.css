@@ -9,7 +9,7 @@
 }
 @media only screen and (max-width: 1000px) {
 	:root {
-		font-size: 8px;
+		font-size: 20px;
 	}
 	#about__main,#contact__main {
 		flex-direction: column;
