@@ -1,33 +1,47 @@
-window.addEventListener("scroll", (event) => {
-    var scroll = this.scrollY;
+document.getElementById("container").addEventListener("scroll", () => {
+    var scroll = document.getElementById("container").scrollTop;
     console.log(scroll)
     document.documentElement.style.setProperty('--title-position', scroll + "px");
     
     console.log("position" , document.documentElement.style.getPropertyValue('--cursor-position'))
     console.log("position ant" , document.documentElement.style.getPropertyValue('--anteater-position'))
 
-    if (scroll>window.screen.height) {
-        //console.log("limite")
-    }
-    defineSkillChart(scroll);
-    defineAnteater(scroll)
+    console.log(window.innerHeight*3)
+    animateElement(scroll)
 });
-window.onload = () => {
-    document.getElementById("header").classList.add("onload");
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 
-function defineAnteater(position) {
-    var anteaterPosition = (position/window.innerHeight).toFixed(2);
-    console.log("ant pos" , anteaterPosition)
-    document.documentElement.style.setProperty('--anteater-position', anteaterPosition);
-    
 
-}
-function defineSkillChart(position) {
-    var cursorPosition = (position/(window.innerHeight*2.4)).toFixed(2);
-    document.documentElement.style.setProperty('--cursor-position', cursorPosition);
-    if (cursorPosition>1) {
-        document.documentElement.style.setProperty('--cursor-position', 1);
+function animateElement(position) {
+
+    if (position > 0 && position < window.innerHeight/4) {
+        document.getElementById("html-cursor").classList.remove('animate');
+        document.getElementById("css-cursor").classList.remove('animate');
+        document.getElementById("js-cursor").classList.remove('animate');
+
+    }
+    else if (position > window.innerHeight*3/4 && position < window.innerHeight*1.25) {
+        document.getElementById("html-cursor").classList.remove('animate');
+        document.getElementById("css-cursor").classList.remove('animate');
+        document.getElementById("js-cursor").classList.remove('animate');
+
+
+    }
+    else if (position > window.innerHeight*1.75 && position < window.innerHeight*2.25) {
+        document.getElementById("html-cursor").classList.add('animate');
+        document.getElementById("css-cursor").classList.add('animate');
+        document.getElementById("js-cursor").classList.add('animate');
+
+
+    }
+    else if (position > window.innerHeight*2.75 && position < window.innerHeight*3) {
+        document.getElementById("html-cursor").classList.add('animate');
+        document.getElementById("css-cursor").classList.add('animate');
+        document.getElementById("js-cursor").classList.add('animate');
     }
 }
+

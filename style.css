@@ -1,4 +1,5 @@
 :root {
+    --img-micro: 10vmin;
     --img-small: 30vmin;
     --img-medium: 60vmin;
     --img-big: 100vmin;
@@ -18,9 +19,29 @@
 body,html {
     overflow-x: hidden;
 }
+  
+  
+  
+
+
+  
+
+#container > div {
+    scroll-snap-align: start;
+
+}
+#container {
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
 #frame-1 {
     background-image: url("images/background/jungle.webp");
     background-size: cover;
+
 }
 #frame-1 h1 {
     font-family: 'Montserrat', sans-serif;
@@ -57,9 +78,7 @@ body,html {
 }
 #frame-1 img {
     width: var(--img-big);
-    margin-left: calc(var(--anteater-position)*200vw);
 }
-
 #frame-2 {
     height: 100vh;
     width: auto;
@@ -67,6 +86,9 @@ body,html {
     flex-direction: column;
     align-items: stretch;
     justify-content: space-evenly;
+    background-image: url("images/background/jungle-opacity.webp");
+    background-size: cover;
+
 }
 #frame-2 div {
     display: flex;
@@ -75,16 +97,7 @@ body,html {
     margin: 0 auto 0;
     width: 90vw;
 }
-#frame-2::before {
-    z-index: -1;
-    content: "s";
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    opacity: 0.4;
-    background-image: url("images/background/jungle.webp");
-    background-size: cover;
-}
+
 #frame-2 h1 {
     align-self: center;
     font-family: 'Montserrat', sans-serif;
@@ -96,7 +109,6 @@ body,html {
     align-self: center;
     width: var(--img-big);
     margin-left: calc(-100vw + var(--anteater-position) * 80vw );
-
 }
 #frame-2 > div > img {
     align-self: center;
@@ -110,7 +122,6 @@ body,html {
     font-size: var(--text-medium);
     margin: auto 0 auto;
 }
-
 
 #frame-3 {
     display: flex;
@@ -129,7 +140,6 @@ body,html {
     font-size: var(--text-big);
     text-shadow: 0px 0px 10px rgba(255, 255, 255, .2);
 }
-
 #frame-3 div {
     width: auto;
     height: auto;
@@ -137,13 +147,11 @@ body,html {
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 15px;
 }
-
 #frame-3 > div > p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: var(--text-medium);
 }
-
 #frame-3 > p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -151,7 +159,6 @@ body,html {
     font-size: var(--text-large);
     padding: 15px;
 }
-
 #frame-3 ul {
     width: 80vw;
     height: auto;
@@ -175,26 +182,92 @@ body,html {
     padding: 10px;
     margin: 10px;
 }
+#frame-3 #html-cursor {
+    background-color:rgb(60, 90, 60);
+    width: 15vmin;
+    transition: all 1s ease;
 
-#frame-3 .html-cursor {
-    background-color:rgb(135, 45, 45);
-    width: var(--html-cursor);
 } 
-#frame-3 .css-cursor {
-    background-color:rgb(45, 55, 210);
-    width: var(--css-cursor);
-}
-#frame-3 .js-cursor {
-    background-color:rgb(215, 235, 50);
-    width: var(--js-cursor);
-}
+#frame-3 #css-cursor {
+    background-color:rgb(60, 90, 60);
+    width: 10vmin;
+    transition: all 1s ease;
 
+}
+#frame-3 #js-cursor {
+    background-color: rgb(60, 90, 60);
+    width: 25vmin;
+    transition: all 1s ease;
+}
+#frame-3 #html-cursor.animate {
+    background-color:rgb(60, 90, 60);
+    width: 50vw;
+} 
+#frame-3 #css-cursor.animate {
+    background-color:rgb(60, 90, 60);
+    width: 75vw;
+}
+#frame-3 #js-cursor.animate {
+    background-color: rgb(60, 90, 60);
+    width: 35vw;
+}
 
 
 #frame-4 {
     height: 100vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url("images/background/jungle-opacity.webp");
+    background-size: cover;
+}
+#frame-4 div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#frame-4 > div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: stretch;
+    justify-content: space-evenly;
+}
+#frame-4 h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: var(--text-large);
+    margin-left: 10vw;
 }
 
-#frame-4 p {
-    font-size: 20vh;
+#frame-4 h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: var(--text-big);
 }
+#frame-4 li {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: var(--text-large);
+    text-align: right;
+    align-self: flex-start;
+    padding: calc(var(--img-micro)*0.25);
+}
+#frame-4 li > img {
+    width: var(--img-micro);
+    margin-bottom: calc(var(--img-micro)*-0.3);
+}
+#frame-4 div > img {
+    width: calc(var(--img-medium)*0.75);
+    margin: auto 0 auto;
+    box-shadow: 0 0 30px 10px rgba(0,0,0, .6);
+    border-radius: 15px;
+}
+#frame-4 p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: var(--text-medium);
+}
+
